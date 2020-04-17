@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node js/index.js",
-    "build": "babel src -d js"
+    "clean": "rm -rf js && mkdir js",
+    "build-babel":"babel src -d js",
+    "build": "npm run clean && npm run build-babel",
+"start": "npm run build && node ./js/index.js"
   },
   "author": "",
   "license": "ISC",
